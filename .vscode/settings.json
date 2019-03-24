@@ -1,8 +1,0 @@
-{
-    "files.exclude": {
-        "**/README.md": true,
-        "**/.vscode": true,
-        "**/__pycache__": true,
-        "**/.gitignore": true
-    }
-}
