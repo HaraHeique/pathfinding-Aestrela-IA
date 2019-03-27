@@ -51,7 +51,6 @@ def getCaminhoPercorrido(mtzMap: list, mtzHeuristica: list, ptoInicial: tuple, p
     
     return pathTraced
         
-
 # Pega a próxima célula que é adicionado na lista de caminho traçados
 def __nextPonto(mtzHeuristica: list, ptoAnterior: tuple, ptoCurrent: tuple) -> tuple:
     
@@ -83,6 +82,23 @@ def __nextPonto(mtzHeuristica: list, ptoAnterior: tuple, ptoCurrent: tuple) -> t
             menorCustoFuncaoHeuristica = mtzHeuristica[direcao[0]][direcao[1]]
 
     return ptoCurrent
+
+# Desenha o mapa traçado passando como argumento uma lista de caminhos traçados
+def drawMapTraced(mtzMap: list, caminhoTracado: list) -> None:
+
+    if (len(mtzMap) == 0 or len(caminhoTracado) == 0):
+        return
+
+    for cell in caminhoTracado:
+        mtzMap[cell[0]][cell[1]] = '*'
+    
+    # Mudando o símbolo do ponto final
+    mtzMap[caminhoTracado[-1][0]][caminhoTracado[-1][1]] = 'F'
+
+    # Mudando o símbolo do ponto inicial
+    mtzMap[caminhoTracado[0][0]][caminhoTracado[0][1]] = 'I'
+
+    return
 
 if __name__ == '__main__':
     from utilities.matricesHandle import printarWithPadding

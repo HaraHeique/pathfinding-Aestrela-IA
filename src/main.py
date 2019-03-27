@@ -20,6 +20,10 @@ def main(filesDir) :
     caminhoTracado: list = heuristic.getCaminhoPercorrido(mtzMap, mtzHeuristic, pontoInicial, pontoFinal)
     print("\nCaminho Percorrido: {0}".format(caminhoTracado))
 
+    # Imprime o percurso percorrido pela matriz
+    heuristic.drawMapTraced(mtzMap, caminhoTracado)
+    mtzHandle.printarStr(mtzMap)
+
     return 0
 
 if __name__ == '__main__':

@@ -24,6 +24,16 @@ def printarWithPadding(mtz: list, padding: int) -> None :
 
     return
 
+# Printa no formato de matriz para caracteres
+def printarStr(mtz: list) -> None :
+    for lines in mtz :
+        print()
+        for elem in lines :
+            print(elem, end=" ")
+    print('\n')
+
+    return
+
 # Cria a matriz baseado no caminho do arquivo passado como argumento
 def openMtzFromPathFile(pathFile: str) -> list :
     mtz = []
